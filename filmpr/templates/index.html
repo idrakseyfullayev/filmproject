@@ -1,0 +1,89 @@
+{% extends 'components/base.html' %}
+
+{% block head %} <title>Index</title> {% endblock %}
+
+
+{% block content %}
+
+  <div class="container mt-3">
+    <h1>Films</h1>
+    <div class="card-group">
+      {% for film in films %}
+      <div  class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0 ">
+          <div class="col-md-4">
+            <a href="{% url 'film:detail' film.id %}"><img src="{{film.poster.url}}" class="img-fluid rounded-start" alt="{{film.name}}"></a>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'film:detail' film.id %}">{{film.name}}</a></h5>
+              <!-- <p class="card-text"><small class="text-muted">{{film.about}}</small></p> -->
+              <h7><b><a href = "{% url 'film:actors' film.id %}">Actors</a></b></h7>
+              {% for actor in film.actors.all %}
+              <p class="card-text"><small class="text-muted"><ul><li><i><a href="{% url 'film:actor_details' actor.id %}">{{actor}}</a></i> </li></ul></small></p>
+              {% endfor %}
+              <small>Views : {{film.views_number}}</small>
+              <p class="card-text"><small class="text-muted">Published {{film.pub_date}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+       {% endfor %}
+
+    </div>
+  </div>
+
+  <div class="container mt-3"><a href="{% url 'account:register' %}"><h3>Register</a></h3></div>
+
+  <ol><div class="container mt-3">
+  {% for account in accounts %}  
+    <li>{{account}}</li>
+  {% endfor %}    
+  </div></ol>
+    
+  {% endblock %}  
+
+
+
+
+
+
+
+  
+
+<!-- <body>
+    <h1> {{ heading }}</h1>
+    <p><i>{{paragraph}}</p>
+      
+    
+    <form method="Post">
+        {% csrf_token %} 
+        <input type="text" name = "info">
+        <button type="submit">Send</button>
+
+    </form>
+        
+
+    <form>
+        <input type="text" name="a">
+        <input type="text" name="b">
+        <button type="submit">Topla</button>
+    </form>
+
+    
+    <p>{{a|add:3}}</p>
+    <p>b={{b}}</p>
+    <P>cem={{sum}}</P>
+    <i>{{info}}</i>
+
+    {% if a == "5" %}
+    <p>a-nin qiymeti 5-dir</p>
+    {% else %}
+    <p>a-nin qiymeti 5 deyil</p>
+    {% endif %}
+
+
+
+
+
+</body> -->

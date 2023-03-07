@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color: #76c5dd;
+}
+
+section{
+    background-color: white;
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 12vh;
+}
+
+h1{
+    width: 100%;
+    color: #4e9ab1;
+    font-size: 36px;
+}

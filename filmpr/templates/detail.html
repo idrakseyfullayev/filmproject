@@ -1,0 +1,97 @@
+{% extends 'components/base.html' %}
+
+
+{% block head %} <title>{{film.name}}</title> {% endblock %}
+
+
+{% block content %}
+    <div class="container mt-3"> 
+      <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{film.poster.url}}" class="img-fluid rounded-start" alt="{{film.name}}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{film.name}}</h5>
+              <p class="card-text">{{film.about}}</p>
+              Categories:
+              {% for film_category in film.film_categories.all %}
+              <li>{{film_category}}</li>
+              {% endfor %}
+              <p class="card-text"><small class="text-muted">Published {{film.pub_date}}</small></p>
+              <p><small>Views : {{film.views_number}}</small></p>
+              
+              <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="choice" value="Like">
+                <input type="hidden" name="filmid" value="{{film.id}}">
+                {% if request.user.is_authenticated %}
+                <button class=" btn btn-primary" type="submit">Like</button>
+                {% else %}
+                <a class=" btn btn-primary" href="{% url 'account:login' %}" >Like</a>
+                {% endif %}
+                <b>"{{like_number|center:"15"}}"</b>
+                <b><p>{{film.film_likes.all | length}}</p></b>
+              </form>
+              {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3">
+     <video class="card mb-3" src="{{film.video.url}}" style="max-width: 100%" controls></video>
+    </div>
+
+
+
+
+    {% if request.user.is_authenticated %}
+       <form class="container" method="POSt">
+        {% csrf_token %}
+        <input type="hidden" name="choice" value="comment">
+        <input type="hidden" name="filmid" value="{{ film.id }}">
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Write you comment</label>
+          <textarea class="form-control" name = "comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" id="exampleFormControlButton1">Send</button>
+       </form>
+       {% else %}
+       <a href="{% url 'account:login' %}"> login</a> to write comment
+
+       {% endif %}
+
+
+    <div class="container mt-3">
+      <h4>Comments ({{ film.film_comments.all | length}})</h4>
+      <div class="container mb-3">
+        {% for comment in film.film_comments.all %}
+        <div class="card">
+          <div class="card-header">
+            {{comment.user.username}}
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>{{comment.comment}}</p>
+              <footer class="blockquote-footer">{{comment.pub_date | timesince}} ago</footer>
+            </blockquote>
+          </div>
+        </div>  
+        {% endfor %}
+      </div>
+
+       
+
+{% endblock %}
+
+ 

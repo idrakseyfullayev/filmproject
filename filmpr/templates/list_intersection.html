@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>{{title}}</title>
+        
+
+    </head>
+
+
+    <body>
+        <h1>{{heading}}</h1>
+        <b>{{information}}</b>
+        <p>{{org_list}}</p>
+
+
+
+        <form>
+            <input type="text" name="list_from_site">
+            <button type="submit">Enter list</button>
+    
+        </form>
+
+        <p>{{list_get}} </p>
+        <p><b>{{list_get_org_intrsc}}</b></p>
+
+        <P\n></P>
+
+        <form method="Post">
+            {% csrf_token %}
+            <input type="text" name="list_1_from site">
+            
+            <button type="submit">Enter list</button>            
+
+            
+        </form>
+
+        <P>{{list_get_1}}</P>
+        <p><b>{{list_get_org_intrsc_1}}</b></p>
+        <P>{{now}}</P>
+        
+
+
+
+    </body>
+
+
+    
+
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{{title}}</title>
+
+    </head>
+
+
+    <body>
+        <p><h1>{{heading}}</h1></p>
+        
+        <form>
+            <input type="text" name="list_from_site">
+            <button type="submit">Enter list</button>
+        </form>
+
+        <p><b>{{list_get_result}}</b></p>
+
+        <p\n></p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="list_1_from_site">
+            <button type="submit">Enter list</button>
+        </form>
+
+        <P><B>{{list_get_result_2}}</B></P>
+        <p>{{now}}</p>
+
+
+        
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+</html>

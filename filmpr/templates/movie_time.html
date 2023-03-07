@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{Title}}</title>
+    </head>
+
+    <body>
+        <h2>{{Film}}</h2>
+        <h3>{{Director}}</h3>
+        <h3>{{Rating}}</h3>
+        <h3>{{About}}</h3>
+        
+
+        <form >
+            <input type="text" name="day sequence">
+            <button type="submit">Enter Day sequence</button>
+        </form>
+
+
+        <!-- <p>{{date}}<p> -->
+        <p><i>Move times</i></p> 
+
+        <ol>
+        {% for i in date %}
+            <li>{{ i }}</li>
+        {% endfor %}
+        </ol>  
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>
