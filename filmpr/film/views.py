@@ -68,14 +68,7 @@ class DetailView(generic.View):
      def get(self, request, id, *args, **kwargs):
           film = get_object_or_404(FilmModel, id=id)
           print(film)
-
-          query = request.GET.get("query")   
           
-     
-          if query:
-               film_ = FilmModel.objects.filter(name = film)
-               print(film_)
-               film = film_.filter(Q(name__contains = query))
 
                
                
@@ -135,7 +128,7 @@ class DetailView(generic.View):
                     user = request.user,
                     comment = comment,
                )
-               print(CommentModel.objects.get(comment=comment)) #  niye film = film islemir
+               # print(CommentModel.objects.get(comment=comment)) #  niye film = film islemir
                # print(CommentModel.objects.create(
                #      film = film,
                #      user = request.user,
@@ -193,14 +186,16 @@ class ActorsView(generic.View):
           
 
           query = request.GET.get("query")
-          print(query)
+          # query = query.replace(" ", "")
+          # print(query)
+         
           
      
           if query:
                film_actors = ActorModel.objects.filter(films = film)
                # actors = film_actors.all().filter( Q(name__contains = query) | Q(surname__contains = query))
-               actors = film_actors.filter(Q(name__contains = query) | Q(surname__contains = query)) 
-               print(actors, 1)
+               actors = film_actors.filter(Q(name__contains = query) | Q(surname__contains = query))
+               # print(actors, 1)
               
 
           context = {

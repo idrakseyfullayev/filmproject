@@ -11,6 +11,9 @@ class Account(models.Model):
         return self.user.username
 
 
+    class Meta:
+        verbose_name = "account"
+        verbose_name_plural = "accounts"
     
     
     

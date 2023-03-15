@@ -12,6 +12,10 @@ class ActorModel(models.Model):
     class Meta:
         verbose_name = "Actor"
 
+    @property
+    def fullname(self):
+        return self.name + " " + self.surname
+
     def __str__(self) -> str:
         return self.name + " " + self.surname
 
