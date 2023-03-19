@@ -5,14 +5,14 @@ MVC(Model,View,Controller) - basqa dillerde
 MVT(Model,View,Template) - Python dilinde
 
 pip install pipenv  -  virtual muhiti yukleyir
-pipen shell - virtual muhit yaradir
+django-admin startproject <name> - proyekt yaradir  (django-admin.py)?????????????
+pipenv shell - virtual muhit yaradir
+cd <project_name>  - proyektin qovluguna daxil olur
 pip install django  -  django-nu yukleyir
+python manage.py startapp <app_name>  -  app yaradir (django-admin startapp <app_name> - app yaradir)
 pip install <kitabxana adi> - kitabxana yuklemek ucun
 pip freeze - yuklenmis kitabxanalari gosterir
 pip freeze > requirements.txt - kitabxanalari bu fayla yigir
-django-admin startproject <name> - proyekt yaradir  (django-admin.py)?????????????
-cd <project_name>  - proyektin qovluguna daxil olur
-python manage.py startapp <app_name>  -  app yaradir (django-admin startapp <app_name> - app yaradir)
 ----------------------------------------------------------------------------------------------------
 python manage.py makemigrations - database cedvellerini hazirlayir
 python manage.py migrate -   database cedvellerini yaradir
@@ -22,18 +22,17 @@ python manage.py runserver - serveri aktivlesdirir
 
 
 git init - proyekt ucun bir defe yazilir
-git clone - proyekt ucucn bir defe yazilir
+git clone <url>- proyekt ucucn bir defe yazilir
 ------------------------------------------
 git status -  git-in veziyyetin yoxlayiriq
 git add . - deyisiklik olmus fayllari ad edir
-git commit -  bu merhelede deyisiklik barade mesaj gonderirirem
-git push origin master - oldugum yerden github-a meleumatlari gonderirirem
+git commit -m "mesaj" -  bu merhelede deyisiklik barade mesaj gonderirirem
+git branch <name> - branch yaradir 
+git push origin <branch name> - oldugum yerden meleumatlari github branch-ina  gonderirir
+ve ya
+git push origin master - oldugum yerden meleumatlari github master-ine  gonderirir
 ------------------------------------------------------------------------
-error verirse - git remote add origin <url>
-
-
-
-
+error verirse - git remote add origin < <repository> url>
 
 
 
