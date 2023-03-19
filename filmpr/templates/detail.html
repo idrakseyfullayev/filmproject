@@ -56,7 +56,7 @@
 
 
     {% if request.user.is_authenticated %}
-       <form class="container" method="POSt">
+       <form class="container" method="POST">
         {% csrf_token %}
         <input type="hidden" name="choice" value="comment">
         <input type="hidden" name="filmid" value="{{ film.id }}">
