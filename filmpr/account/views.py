@@ -151,7 +151,7 @@ class LoginPageView(generic.View):
         # login_view_films = ViewNumberModel.objects.filter(user__username = request.user.username)
         # film_likes0 = LikeModel.objects.filter(user = request.user)
         # print(login_view_films)
-        # print(film_likes0)
+        # print(film_likes0, 11)
         # film_likes1 = FilmModel.objects.all()
         # list1 = []
         # for i in film_likes1:
@@ -166,9 +166,10 @@ class LoginPageView(generic.View):
         # }
 
         # user = User.objects.get(username=request.user.username)
-
+        # x__ = User.objects.get(username = request.user.username)
+        # print(x__.user_likes.all(), 9999)
         user_likes = request.user.user_likes.all()
-        # print(request.user.user_likes.all())
+        # print(request.user.user_likes.all(), 8)
         # list1 = []
         # for i in user_likes:
         #     x = i.strip("|")

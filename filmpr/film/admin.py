@@ -1,12 +1,13 @@
 from django.contrib import admin
 
 # Register your models here.
-from film.models import ActorModel, FilmModel, LikeModel, CommentModel, CategoryModel
+from film.models import ActorModel, FilmModel, LikeModel, CommentModel, CategoryModel, ViewNumberModel
 
 # admin.site.register(ActorModel)
 admin.site.register(LikeModel)
 admin.site.register(CommentModel)
 # admin.site.register(CategoryModel)
+admin.site.register(ViewNumberModel)
 
 @admin.register(FilmModel)
 class FilmAdmin(admin.ModelAdmin):

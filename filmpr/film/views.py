@@ -495,6 +495,7 @@ class CreateFilmView(generic.View):
      # for my_actor in my_film_actors_:
      #      print (my_actor)
 
+     # actors = ActorModel.objects.all()
      # my_film_actors = actors.filter(films__name ="The Truman Show")
      # print(my_film_actors)
 

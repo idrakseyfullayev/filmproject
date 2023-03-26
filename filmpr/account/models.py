@@ -4,7 +4,7 @@ from film.models import FilmModel
 
 
 class Account(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
     photo = models.ImageField(upload_to="accountphotos", blank=True, null=True)
 
     def __str__(self):
