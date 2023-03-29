@@ -29,10 +29,11 @@ git add . - deyisiklik olmus fayllari ad edir
 git commit -m "mesaj" -  bu merhelede deyisiklik barade mesaj gonderirirem
 git branch <name> - branch yaradir 
 git push origin <branch name> - oldugum yerden meleumatlari github branch-ina  gonderirir
+error verirse - git remote add origin < <repository> url>
 ve ya
 git push origin master - oldugum yerden meleumatlari github master-ine  gonderirir
 ------------------------------------------------------------------------
-error verirse - git remote add origin < <repository> url>
+
 
 
 pythonanywhere
@@ -42,11 +43,15 @@ mkvirtualenv myvirtualenv --python=/usr/bin/python3.10 - virtual envoriment yara
 git init
 git clone - https://github.com/idrakseyfullayev/todoproject.git
 pip install -r requirements.txt - requirements.txt fayli lazimi yere yuklemek
-git pull origin todoprupdate-8 - error verirse
+
+workon <virtualenv_name> - virtual muhiti aktiv temek
+git pull origin todoprupdate-8 
+error verirse
+git reset --hard  - proyekt update edlilende error: Your local changes to the following files would be overwritten by merge:
+error verirse
 git remote add origin https://github.com/idrakseyfullayev/todoproject.git
 git pull origin todoprupdate-8
-
-git reset --hard  - proyekt update edlilende error: Your local changes to the following files would be overwritten by merge:
+pip install -r requirements.txt - requirements.txt fayli lazimi yere yuklemek
 
 
 
@@ -58,8 +63,7 @@ pwd - yolu gosterir- hal hazirdaki hardayiq
 pip install -r requirements.txt - requirements.txt fayli lazimi yere yuklemek
 
 
-
-
+python manage.py collectstatic - static fayllari bir qovluga toplayir
 
 
 
