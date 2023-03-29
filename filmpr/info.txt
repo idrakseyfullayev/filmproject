@@ -95,3 +95,4 @@ python manage.py collectstatic - static fayllari bir qovluga toplayir
 
 
 
+
