@@ -29,7 +29,9 @@ git add . - deyisiklik olmus fayllari ad edir
 git commit -m "mesaj" -  bu merhelede deyisiklik barade mesaj gonderirirem
 git branch <name> - branch yaradir 
 git push origin <branch name> - oldugum yerden meleumatlari github branch-ina  gonderirir
-error verirse - git remote add origin < <repository> url>
+error verirse
+git remote add origin < <repository url>
+git push origin <branch name>
 ve ya
 git push origin master - oldugum yerden meleumatlari github master-ine  gonderirir
 ------------------------------------------------------------------------
